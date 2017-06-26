@@ -53,6 +53,14 @@ class BackpackTest < MiniTest::Test
     end
   end
 
+  def test_that_gym_shoes_are_not_added
+    ['tuesday', 'wednesday','friday', 'saturday', 'sunday' ]. each do |day|
+      backpack = build(:backpack, day_of_week: day)
+      refute(backpack.items.include?('gym shoes'))
+    end
+  end
+
+
 
   ##### TESTS ABOUT PRINTING THE LIST #####
   def test_that_backpack_prints_correctly
