@@ -45,16 +45,16 @@ class Backpack
   end
 
   # Prints a summary packing list for Melinda's backpack
-  def my_func
-    output = []
-    output << "Melinda, here's your packing list!"
-    output << "Day: #{@attributes[:day_of_week]}, Weather: #{@attributes[:weather]}"
-    output << ""
+  def packing_list
+    packing_list = []
+    packing_list << "Melinda, here's your packing list!"
+    packing_list << "Day: #{@attributes[:day_of_week]}, Weather: #{@attributes[:weather]}"
+    packing_list << ""
 
     @items.each do |item|
-      output << "- #{item}"
+      packing_list << "- #{item}"
     end
-    output.join("\n")
+    packing_list.join("\n")
   end
 
 end
