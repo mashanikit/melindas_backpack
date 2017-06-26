@@ -1,7 +1,8 @@
 class Backpack
 
   def initialize(attributes)
-    @attributes = attributes # a hash containing day_of_week and weather keys
+    # a hash containing day_of_week and weather keys
+    @attributes = attributes
     @items = []
     clothing_added_to_backpack
     gym_shoes_are_added
@@ -12,13 +13,9 @@ class Backpack
     @items
   end
 
-#   Find a chunk of code that goes together, and give the concept a name.
-# Make an empty method with that name.
-# Call the method from the same place as the code you're moving.
-# Cut the code from the old location to the new method. Make sure to bring any local variable assignments with you to the new method!
 
   def clothing_added_to_backpack
-    # set up local variables used by rest of methods
+    #Ensure appropriate clothing is added to backpack
     weather = @attributes[:weather]
     day_of_week = @attributes[:day_of_week]
     if weather == 'rainy'
@@ -30,7 +27,6 @@ class Backpack
     end
   end
 
-    # Ensure appropriate clothing is added to backpack
 
   def rainy_weather
     @items << 'pants'
@@ -51,7 +47,6 @@ class Backpack
 
   def gym_shoes_are_added
     # Ensure gym shoes are added to backpack if it's a gym day
-    # Gotta get to the gym on Mondays and Thursdays. Wait a sec...
     day_of_week = @attributes[:day_of_week]
     if day_of_week == 'monday' || day_of_week == 'thursday'
       #add gym shoes to items
@@ -65,7 +60,6 @@ class Backpack
     if day_of_week != 'saturday' && day_of_week != 'sunday'
       @items << 'packed lunch'
     else
-      # Used to bring snacks on weekend trips, but now I just buy 'em
       @items << 'snacks'
     end
   end
